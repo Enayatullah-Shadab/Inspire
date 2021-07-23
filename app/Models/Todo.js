@@ -1,20 +1,8 @@
-
-
-
-
-
-
-
-
-
-import { generateId } from "../Utils/GenerateId.js"
-
 export default class Task {
     constructor({ name, _id, check }) {
         this.name = name
         this.id = _id
         this.check = check || false
-
     }
     get Template() {
         return `

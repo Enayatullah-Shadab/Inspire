@@ -17,7 +17,7 @@ export default class TodosController {
         try {
             await todosService.getTodos()
         } catch (error) {
-            console.error(error)
+            console.error()
         }
     }
 }
