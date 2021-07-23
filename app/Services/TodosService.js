@@ -7,29 +7,24 @@ class TodosService {
 
     }
     async getTodos() {
-        const res = await sandbox.get()
+        const res = await sandbox.get('Sha/Todos')
         console.log(res.data);
         ProxyState.players = res.data
-
     }
-
     async createTodos() {
-        const res = await sandbox.post('', { name })
-        ProxyState.activePlayer = res.data
-        ProxyState.players = [...ProxyState.players, res.data]
-
-
-        console.log(" in Service, addTask")
-        ProxyState.tasks = [...ProxyState.tasks, new Task(rawTask)]
-
+        const res = await sandbox.post('Sha/Todos', { Template })
+        ProxyState.todos = res.data
+        ProxyState.todos = [...ProxyState.todos, res.data]
     }
-
-
     async deleteTodos() {
-        let foundTask = ProxyState.tasks.find(task => task.id == id)
-        ProxyState.tasks = ProxyState.tasks.filter(task => task.id != id)
-
+        let foundTodo = ProxyState.todos.find(t => t.id == id)
+        ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
+    }
+    checked(id) {
+        let foundTodo = ProxyState.todos.find(t => t.id == id)
+        if (foundTodo.check == false) {
+            foundTodo.check = true
+        }
     }
 }
-
 export const todosService = new TodosService();

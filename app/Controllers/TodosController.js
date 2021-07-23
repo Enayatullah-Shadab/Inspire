@@ -5,7 +5,7 @@ function _draw() {
     const todos = ProxyState.todos
     let template = ''
     todos.forEach(t => template += t.Template)
-    document.getElementById('todo-name').innerHTML = template
+    document.getElementById('todos-name').innerHTML = template
 }
 
 export default class TodosController {
@@ -15,7 +15,7 @@ export default class TodosController {
     }
     async getTodos() {
         try {
-            await TodosService.getTodos()
+            await todosService.getTodos()
         } catch (error) {
             console.error(error)
         }
