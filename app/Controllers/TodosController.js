@@ -12,12 +12,20 @@ export default class TodosController {
     constructor() {
         ProxyState.on('todos', _draw)
         this.getTodos()
+            - draw()
     }
     async getTodos() {
         try {
-            await todosService.getTodos()
+            todosService.getTodos()
         } catch (error) {
-            console.error()
+            console.log("It looks there is a problem: " + error)
+        }
+    }
+    async newTodo(event) {
+        try {
+
+        } catch (error) {
+            window.alert(error)
         }
     }
 }
