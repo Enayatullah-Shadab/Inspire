@@ -25,6 +25,7 @@ class TodosService {
     }
 
     async updateTodo(id) {
+
         try {
             let item = ProxyState.Todo.find(t => t.id == id)
             item.checked = !item.checked
@@ -39,6 +40,7 @@ class TodosService {
 
     }
     async deleteTodo(id) {
+        debugger;
         try {
             let res = await Sandbox.delete("Sha/todos" + id)
             ProxyState.Todo = ProxyState.Todo.filter(t => t.id != id)
