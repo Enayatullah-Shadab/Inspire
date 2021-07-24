@@ -3,7 +3,7 @@ import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
-  /** @type {Todos[]} */
+  /** @type {todos[]} */
   todos = []
 }
 
