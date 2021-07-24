@@ -6,7 +6,7 @@ export default class ImagesController {
 
     async getImage() {
         try {
-            await imageService.getTodos()
+            await imagesService.getTodos()
         } catch (error) {
             console.log(" something was wrong " + error)
         }
