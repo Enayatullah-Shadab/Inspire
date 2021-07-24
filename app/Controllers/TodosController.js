@@ -1,46 +1,59 @@
 import { ProxyState } from "../AppState.js"
 import { todosService } from "../Services/TodosService.js"
 
-function _draw() {
-    const todos = ProxyState.todos
+function _drawAll() {
+
+    // todo is my variable and Todo is my class name
+    const todo = ProxyState.Todo
     let template = ''
-    todos.forEach(t => template += t.Template)
+    todo.forEach(t => template += t.Template)
     document.getElementById('todos-name').innerHTML = template
+    if (!template) {
+        document.getElementById('todos-name').innerHTML = `<h4> <h4> Please enter a text to display it</h4>`
+    }
 }
 
 export default class TodosController {
     constructor() {
-        ProxyState.on('todos', _draw)
+        ProxyState.on('todos', _drawAll)
         this.getTodos()
 
     }
+
     async getTodos() {
         try {
-            todosService.getTodos()
+            await todosService.getTodos()
         } catch (error) {
-            console.log("It looks there is a problem:" + error)
+            console.log(" something was wrong " + error)
         }
     }
     async newTodo() {
         try {
-
+            window.event.preventDefault()
+            let form = window.event.target
+            let rawTodo = {
+                details: form.details.value
+            }
+            await todosService.newTodo(rawTodo)
+            form.reset
         } catch (error) {
 
-            window.alert(error)
-        }
-    }
-    async deleteTodo(id) {
-        try {
-            todosService.deleteTodo(id)
-        } catch (error) {
-            console.log(error)
+            console.log("something went wrong " + error)
         }
     }
     async updateTodo(id) {
         try {
-            todosService.updateTodo(id)
+            await todosService.updateTodo(id)
         } catch (error) {
-            console.log(error)
+            console.error(error);
+        }
+    }
+
+    async deleteTodo(id) {
+        try {
+            await todosService.deleteTodo(id)
+        } catch (error) {
+            console.error(error)
         }
     }
 }
