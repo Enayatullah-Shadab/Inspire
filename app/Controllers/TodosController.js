@@ -15,7 +15,7 @@ function _drawAll() {
 
 export default class TodosController {
     constructor() {
-        ProxyState.on('todos', _drawAll)
+        ProxyState.on('todo', _drawAll)
         this.getTodo()
 
     }
@@ -28,11 +28,12 @@ export default class TodosController {
         }
     }
     async newTodo() {
+
         try {
-            window.event.preventDefault()
-            let form = window.event.target
+            event.preventDefault()
+            let form = event.target
             let rawTodo = {
-                details: form.details.value
+                description: form.details.value
             }
             await todosService.newTodo(rawTodo)
             form.reset

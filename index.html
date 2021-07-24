@@ -22,31 +22,51 @@
         </nav>
     </header>
     <main class="container-fluid">
-        <form class="m-3" onsubmit="app.todosController.newTodo(event)">
+        <!-- <form class="m-3" onsubmit="app.todosController.newTodo(event)">
             <div class="d-flex flex-row">
                 <div class="form-group col "></div>
                 <label for="Todos"></label>
                 <input type="text" name="Todos" class="form-control " placeholder="Add Todos...">
                 <button type="submit" class="bg-primary top-round">Add</button>
             </div>
-        </form>
-        <div id="todos-name"></div>
+        </form> -->
         <div id="clock"></div>
         <div id="image"></div>
         <div id="weather"></div>
         </div>
-        <!-- <div class="card w-50">
+
+        <!-- <div class="card border-black w-50">
             <h3 class="text-left m-4">Todos</h3>
             <div class="card-body form-check d-flex flex-column ml-5">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    <input type="checkbox" class="form-check-input" name="todos-name" id="todos-name"
+                        value="checkedValue" checked>
                 </label>
             </div>
 
-            <span><i class="mdi mdi-15px mdi-trash-can" onclick="app.listsController.deleteTodos()"></i></span>
+            <span><i class="mdi mdi-15px mdi-trash-can" onclick="app.todosController.deleteTodos()"></i></span>
         </div> -->
+
+        <div class="card border-success m-5 p-1 card border-black w-50" style="max-width: 18rem;">
+            <div class="card-header bg-transparent border-success ">Todos</div>
+            <div class="card-body text-success ">
+                <!-- <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input " name="todos-name" id="todos-name" value="checkedValue"
+                        checked>
+                </label> -->
+                <div class="card">
+                    <p id="todos-name"></p>
+                </div>
+            </div>
+            <form action="" onsubmit="app.todosController.newTodo('${thsi.id}')">
+                <input type="text" name="details" placeholder="Add todos"
+                    class="card-footer bg-transparent border-success">
+                <button type="submit" class="bg-primary top-round "> Add
+                </button>
+            </form>
+        </div>
     </main>
-    <footer class="bg-dark text-light">
+    <footer class=" bg-dark text-light">
         <div class="text-center">
             <p><small>Made with 💪 by Shadab</small></p>
         </div>
