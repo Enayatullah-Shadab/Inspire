@@ -3,7 +3,6 @@ import { sandbox } from "./AxiosService.js";
 
 class TodosService {
     setTodos(name) {
-
     }
     async getTodos() {
         const res = await sandbox.get('Sha/todos')
@@ -15,26 +14,26 @@ class TodosService {
         ProxyState.todo = res.data
         console.log(res.data);
         ProxyState.Todo = [...ProxyState.Todo, new Todo(res.data)]
+
     }
     async deleteTodo() {
         let res = sandbox.deleteTodo("Sha/todos " + id)
         ProxyState.todos = ProxyState.Todo.filter(t => t.id != id)
     }
     async updateTodo(id) {
-        let found = ProxyState.Todo.find(t => t.id == id)
-        found.completed = !found.completed
-        found.completed = !found.completed
-        console.log(found.completed)
-        console.log(found);
-        let res = await Sandbox.put("Sha/todos/" + id, found)
+        let item = ProxyState.Todo.find(t => t.id == id)
+        item.completed = !item.completed
+        itemd.completed = !item.completed
+        console.log(item.completed)
+        console.log(item);
+        let res = await Sandbox.put("Sha/todos/" + id, item)
         console.log(res.data);
         ProxyState.Todo = ProxyState.Todo
-
     }
     checked(id) {
-        let foundTodo = ProxyState.todos.find(t => t.id == id)
-        if (foundTodo.check == false) {
-            foundTodo.check = true
+        let itemTodo = ProxyState.todos.find(t => t.id == id)
+        if (itemTodo.check == false) {
+            itemTodo.check = true
         }
     }
 }

@@ -12,6 +12,7 @@ export default class TodosController {
     constructor() {
         ProxyState.on('todos', _draw)
         this.getTodos()
+
     }
     async getTodos() {
         try {

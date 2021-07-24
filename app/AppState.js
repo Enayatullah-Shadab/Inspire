@@ -1,4 +1,4 @@
-import Value from "./Models/Todo.js"
+import Todo from "./Models/Todo.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
