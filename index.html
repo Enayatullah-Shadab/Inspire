@@ -21,18 +21,19 @@
             </a>
         </nav>
     </header>
-    <main class="container">
-        <form onsubmit="app.todosController.newTodo(event)">
+    <main class="container-fluid">
+        <form class="m-3" onsubmit="app.todosController.newTodo(event)">
             <div class="d-flex flex-row">
-                <div class="form-group col-2 mx-1 my-1"></div>
+                <div class="form-group col "></div>
                 <label for="Todos"></label>
-                <input type="text" name="Todos" class="form-control" placeholder="Add Todos...">
-            </div>
-            <div class="col-2 p-1 m-2">
-                <button type="submit" class="button">Add</button>
+                <input type="text" name="Todos" class="form-control " placeholder="Add Todos...">
+                <button type="submit" class="bg-primary top-round">Add</button>
             </div>
         </form>
         <div id="todos-name"></div>
+        <div id="clock"></div>
+        <div id="image"></div>
+        <div id="weather"></div>
         </div>
         <!-- <div class="card w-50">
             <h3 class="text-left m-4">Todos</h3>
