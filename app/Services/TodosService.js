@@ -3,7 +3,7 @@ import { sandbox } from "./AxiosService.js";
 
 class TodosService {
 
-    async getTodos() {
+    async getTodo() {
         const res = await sandbox.get('Sha/todos')
         console.log(res.data)
         ProxyState.Todo = res.data.map(t => new Todo(t))

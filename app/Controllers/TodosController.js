@@ -16,13 +16,13 @@ function _drawAll() {
 export default class TodosController {
     constructor() {
         ProxyState.on('todos', _drawAll)
-        this.getTodos()
+        this.getTodo()
 
     }
 
-    async getTodos() {
+    async getTodo() {
         try {
-            await todosService.getTodos()
+            await todosService.getTodo()
         } catch (error) {
             console.log(" something was wrong " + error)
         }
