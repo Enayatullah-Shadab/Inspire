@@ -1,10 +1,11 @@
 import { ProxyState } from "../AppState.js"
 import { todosService } from "../Services/TodosService.js"
 
-function _drawAll() {
 
+function _drawAll() {
+    debugger;
     // todo is my variable and Todo is my class name
-    const todo = ProxyState.Todo
+    const todo = ProxyState.todo
     let template = ''
     todo.forEach(t => template += t.Template)
     document.getElementById('todos-name').innerHTML = template
@@ -16,6 +17,7 @@ function _drawAll() {
 export default class TodosController {
     constructor() {
         ProxyState.on('todo', _drawAll)
+        //   loadState()
         this.getTodo()
     }
 

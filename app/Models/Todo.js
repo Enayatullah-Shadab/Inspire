@@ -8,10 +8,9 @@ export default class Todo {
     }
     get Template() {
         return `
-        <div class="card w-50 d-flex flex-row">
-        <h3 class="text-left m-4">Todos</h3>
-        <div class="card-body form-check d-flex flex-column ml-5"">
-                <input type="checkbox" id="${this.id}" onclick="app.todosController.updateTodo('${this.id}')" ${this.isCompleted}} >
+        <div class="card">
+        <div class="card-body m=1">
+                <input type="checkbox" id="${this.id}" onclick="app.todosController.updateTodo('${this.id}')"} >
                 <label class="col-10 form-check-label" for="${this.user}">
                 ${this.description}
         </div >
@@ -20,13 +19,6 @@ export default class Todo {
             </span>
         </div > `
     }
-    get isCompleted() {
-        let template = ''
-        if (this.complated) {
-            template = 'complated'
-        } else {
-            template = ''
-        }
-        return template
-    }
 }
+// w-50 d-flex flex-row
+//form-check d-flex flex-column ml-5

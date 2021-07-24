@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
-import { sandbox } from "./AxiosService.js"
+import { sandbox } from "./AxiosService.js";
+import Todo from "../Models/Todo.js";
 
 class TodosService {
 
@@ -7,7 +8,7 @@ class TodosService {
         try {
             const res = await sandbox.get('Sha/todos')
             console.log(res.data)
-            ProxyState.Todo = res.data.map(t => new Todo(t))
+            ProxyState.todo = res.data.map(t => new Todo(t))
         } catch (error) {
             console.error()
         }
@@ -18,7 +19,7 @@ class TodosService {
         try {
             const res = await sandbox.post('Sha/todos', rawTodo)
             console.log(res.data);
-            ProxyState.Todo = [...ProxyState.Todo, new Todo(res.data)]
+            ProxyState.todo = [...ProxyState.todo, new Todo(res.data)]
         } catch (error) {
             console.log(error)
         }
@@ -27,13 +28,13 @@ class TodosService {
     async updateTodo(id) {
 
         try {
-            let item = ProxyState.Todo.find(t => t.id == id)
+            let item = ProxyState.todo.find(t => t.id == id)
             item.checked = !item.checked
             console.log(item.checked)
             console.log(item);
             let res = await Sandbox.put("Sha/todos/" + id, item)
             console.log(res.data);
-            ProxyState.Todo = ProxyState.Todo
+            ProxyState.todo = ProxyState.todo
         } catch (error) {
             console.log(error)
         }
@@ -43,7 +44,7 @@ class TodosService {
         debugger;
         try {
             let res = await Sandbox.delete("Sha/todos" + id)
-            ProxyState.Todo = ProxyState.Todo.filter(t => t.id != id)
+            ProxyState.todo = ProxyState.todo.filter(t => t.id != id)
         } catch (error) {
 
         }
