@@ -1,3 +1,4 @@
+import ClocksController from "./Controllers/ClocksController.js";
 import ImagesController from "./Controllers/ImagesController.js";
 import QoutesController from "./Controllers/QoutesController.js";
 import TodosController from "./Controllers/TodosController.js";
@@ -8,7 +9,7 @@ class App {
   imagesController = new ImagesController()
   qoutesController = new QoutesController()
   weatherContller = new WeatherController()
-
+  clocksController = new ClocksController()
 }
 
 window["app"] = new App();
