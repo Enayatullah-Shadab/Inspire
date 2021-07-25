@@ -43,8 +43,16 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
+            debugger;
+            let v = document.getElementById(id).checked
+            // if (document.getElementById(id).checked) {
+
+            //     alert("Checked")
+            // } else {
+            //     alert("Not Checked")
+            // }
             console.log('this is hi from update')
-            await todosService.updateTodo(id)
+            await todosService.updateTodo(id, v)
         } catch (error) {
             console.error(error);
         }
@@ -60,9 +68,17 @@ export default class TodosController {
             console.error(error)
         }
     }
+
+
+
     checked(id) {
-        window.confirm("Are you sure, you checking button")
-        todosService.checked(id)
-        _drawAll()
+        try {
+            let itemTodo = ProxyState.todos.find(t => t.id == id)
+            if (itemTodo.check == false) {
+                itemTodo.check = true
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 }

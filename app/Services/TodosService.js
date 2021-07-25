@@ -25,20 +25,19 @@ class TodosService {
         }
     }
 
-    async updateTodo(id) {
+    async updateTodo(id, v) {
 
         try {
             let item = ProxyState.todo.find(t => t.id == id)
-            item.checked = !item.checked
-            console.log(item.checked)
+            item.completed = !item.completed
+            console.log(item.completed)
             console.log(item);
-            let res = await sandbox.put("Sha/todos/" + id, item)
+            let res = await sandbox.put("Sha/todos/" + id, { completed: v })
             console.log(res.data);
             ProxyState.todo = ProxyState.todo
         } catch (error) {
             console.log(error)
         }
-
     }
     async deleteTodo(id) {
         try {
