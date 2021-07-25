@@ -13,11 +13,6 @@ export default class Image {
     <div class=" row text center p-2 m-2">
         <div class="col-3" id="image">
         ${this.url}
-        ${this.imgUrl}
-        ${this.largeImgUrl}
-        ${this.tags}
-        ${this.author}
-        ${this.query}
         </div>
     </div> `
     }

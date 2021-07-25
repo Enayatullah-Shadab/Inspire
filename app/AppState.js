@@ -10,7 +10,7 @@ class AppState extends EventEmitter {
   /** @type {clock[]} */
   todo = []
   image = []
-  qoute = []
+  quote = []
   //   weather = []
   //   clock = []
 }

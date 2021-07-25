@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js";
 import { sandbox } from "./AxiosService.js";
 
 
-class QoutesService {
+class QuotesService {
 
     async getQoute() {
         try {
@@ -16,4 +16,4 @@ class QoutesService {
         }
     }
 }
-export const qoutesService = new QoutesService()
+export const quotesService = new QuotesService()
