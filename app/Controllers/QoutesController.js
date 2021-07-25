@@ -4,11 +4,15 @@ import { qoutesService } from "../Services/QoutesService.js"
 
 export default class QoutesController {
 
+    constructor() {
+        ProxyState.on('quote', _drawQuoute())
+        this.getQoute()
+    }
     async getQoute() {
         try {
             await qoutesService.getQoute()
         } catch (error) {
-            console.log(" something was wrong " + error)
+            console.log("error from qoute controller " + error)
         }
     }
 }

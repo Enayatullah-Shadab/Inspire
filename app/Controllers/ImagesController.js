@@ -4,12 +4,15 @@ import { imagesService } from "../Services/ImagesService.js"
 
 export default class ImagesController {
 
+    constructor() {
+        ProxyState.on('image', _drawImage())
+        this.getImage()
+    }
     async getImage() {
         try {
-            await imagesService.getTodos()
+            await imagesService.getImage()
         } catch (error) {
-            console.log(" something was wrong " + error)
+            console.log("error from catch block" + error)
         }
     }
-
 }
