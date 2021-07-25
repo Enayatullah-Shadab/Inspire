@@ -5,7 +5,6 @@ import { imagesService } from "../Services/ImagesService.js"
 function _drawImage() {
     const image = ProxyState.image
     let template = ''
-    debugger;
     image.forEach(i => template += i.Template)
     document.body.style.backgroundImage = 'no-repeat'
     document.body.style.backgroundImage = "url('" + template + "')"
