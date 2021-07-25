@@ -7,7 +7,7 @@ import TodosController from "./Controllers/TodosController.js";
 class App {
   todosController = new TodosController()
   imagesController = new ImagesController()
-  qoutesController = new QoutesController()
+  // qoutesController = new QoutesController()
   // weatherContller = new WeatherController()
   // clocksController = new ClocksController()
 }

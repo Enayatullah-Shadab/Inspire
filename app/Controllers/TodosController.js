@@ -15,7 +15,7 @@ function _drawAll() {
 export default class TodosController {
     constructor() {
         ProxyState.on('todo', _drawAll)
-        loadState()
+        // loadState()
         this.getTodo()
     }
 
