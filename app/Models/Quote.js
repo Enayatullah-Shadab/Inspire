@@ -1,6 +1,6 @@
 export default class Quote {
 
-    constructor({ content, aoutor }) {
+    constructor({ content, autor }) {
         this.content = content
         this.autor = autor
     }

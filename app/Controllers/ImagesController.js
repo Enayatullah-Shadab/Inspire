@@ -3,7 +3,6 @@ import { imagesService } from "../Services/ImagesService.js"
 
 
 function _drawImage() {
-    debugger;
     const image = ProxyState.image
     let template = ''
     image.forEach(i => template += i.Template)

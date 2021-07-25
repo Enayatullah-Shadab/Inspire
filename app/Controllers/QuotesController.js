@@ -3,7 +3,6 @@ import { quotesService } from "../Services/QuotesService.js"
 
 
 function _drawQuote() {
-    debugger;
     const quote = ProxyState.quote
     let template = ''
     quote.forEach(q => template += q.Template)

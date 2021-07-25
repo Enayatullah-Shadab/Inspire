@@ -4,15 +4,14 @@ import { sandbox } from "./AxiosService.js";
 
 class QuotesService {
 
-    async getQoute() {
+    async getQuote() {
         try {
-            const res = await sandbox.get('qoutes/')
+            const res = await sandbox.get('quotes/')
             console.log(res.data)
-            ProxyState.Qoute = res.data.map(q => new Qoute(q))
+            ProxyState.Quote = res.data.map(q => new Quote(q))
             console.log("call form quote service")
-
         } catch (error) {
-            console.error(error)
+            console.log(error)
         }
     }
 }
