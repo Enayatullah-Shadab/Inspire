@@ -43,6 +43,7 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
+            debugger
             let v = document.getElementById(id).checked
             // if (document.getElementById(id).checked) {
 
@@ -68,16 +69,14 @@ export default class TodosController {
         }
     }
 
-
-
-    checked(id) {
-        try {
-            let itemTodo = ProxyState.todos.find(t => t.id == id)
-            if (itemTodo.check == false) {
-                itemTodo.check = true
-            }
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    //     checked(id) {
+    //         try {
+    //             let itemTodo = ProxyState.todos.find(t => t.id == id)
+    //             if (itemTodo.check == false) {
+    //                 itemTodo.check = true
+    //             }
+    //         } catch (error) {
+    //             console.error(error)
+    //         }
+    //     }
 }
