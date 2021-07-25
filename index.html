@@ -55,15 +55,15 @@
             <div class="card-header bg-transparent border-success ">Todos</div>
             <div class="card-body text-success ">
                 <!-- <label class="form-check-label ">
-                    <input type="checkbox" class="form-check-input " name="todos-name" id="todos-name" value="checkedValue"
-                        checked>
+                    <input type="checkbox" class="form-check-input " name="todos-name" id="todos-name"
+                        value="checkedValue" onclick="app.todosController.updateTodo('${this.id}')" checked>
                 </label> -->
                 <div class="card">
                     <p id="todos-name"></p>
                 </div>
             </div>
             <form class="d-flex flex-row" onsubmit="app.todosController.newTodo('${thsi.id}')">
-                <input type="text" name="details" placeholder="Add todos"
+                <input type="text" name="description" placeholder="Add todos"
                     class="card-footer bg-transparent border-success">
                 <button type="submit" class="bg-primary top-round "> Add
                 </button>

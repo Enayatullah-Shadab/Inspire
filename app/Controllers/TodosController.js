@@ -12,7 +12,6 @@ function _drawAll() {
         document.getElementById('todos-name').innerHTML = `<h4> <h4> Please enter a text to display it</h4>`
     }
 }
-
 export default class TodosController {
     constructor() {
         ProxyState.on('todo', _drawAll)
@@ -33,7 +32,7 @@ export default class TodosController {
             event.preventDefault()
             let form = event.target
             let rawTodo = {
-                description: form.details.value
+                description: form.description.value
             }
             await todosService.newTodo(rawTodo)
             form.reset
@@ -44,6 +43,7 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
+            console.log('this is hi from update')
             await todosService.updateTodo(id)
         } catch (error) {
             console.error(error);
@@ -59,5 +59,10 @@ export default class TodosController {
         } catch (error) {
             console.error(error)
         }
+    }
+    checked(id) {
+        window.confirm("Are you sure, you checking button")
+        todosService.checked(id)
+        _drawAll()
     }
 }

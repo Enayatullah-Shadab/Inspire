@@ -41,7 +41,6 @@ class TodosService {
 
     }
     async deleteTodo(id) {
-        debugger;
         try {
             let res = await sandbox.delete("Sha/todos/" + id)
             ProxyState.todo = ProxyState.todo.filter(t => t.id != id)
