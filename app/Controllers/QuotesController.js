@@ -7,12 +7,12 @@ function _drawQuote() {
     const quote = ProxyState.quote
     let template = ''
     quote.forEach(q => template += q.Template)
-    document.getElementById('quote').innerHTML = template
+    // document.getElementById('quote').innerHTML = template
 }
 export default class QuotesController {
 
     constructor() {
-        ProxyState.on('quote', _drawQuote())
+        // ProxyState.on('quote', _drawQuote())
         this.getQuote()
     }
     async getQuote() {

@@ -9,7 +9,8 @@ class QuotesService {
         try {
             const res = await sandbox.get('quotes/')
             console.log(res.data)
-            // ProxyState.Quote = res.data.map(q => new Quote(q))
+            document.getElementById('content').innerHTML = res.data.content
+            document.getElementById('autor').innerHTML = res.data.author
             console.log("call form quote service")
         } catch (error) {
             console.log(error)

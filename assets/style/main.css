@@ -10696,3 +10696,11 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
+.myQoute{
+  position: absolute;
+  top: 10px;
+  right:20px;
+  color:rgb(253, 14, 14);
+  background-color: light;
+  width: 200px;
+}
