@@ -3,7 +3,6 @@ import { todosService } from "../Services/TodosService.js"
 
 
 function _drawAll() {
-    debugger;
     // todo is my variable and Todo is my class name
     const todo = ProxyState.todo
     let template = ''
@@ -53,7 +52,10 @@ export default class TodosController {
 
     async deleteTodo(id) {
         try {
-            await todosService.deleteTodo(id)
+            if (window.confirm('Are you sure,you want to delete it?')) {
+                await todosService.deleteTodo(id)
+                console.log("todo deleted")
+            }
         } catch (error) {
             console.error(error)
         }

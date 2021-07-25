@@ -32,7 +32,7 @@ class TodosService {
             item.checked = !item.checked
             console.log(item.checked)
             console.log(item);
-            let res = await Sandbox.put("Sha/todos/" + id, item)
+            let res = await sandbox.put("Sha/todos/" + id, item)
             console.log(res.data);
             ProxyState.todo = ProxyState.todo
         } catch (error) {
@@ -43,10 +43,10 @@ class TodosService {
     async deleteTodo(id) {
         debugger;
         try {
-            let res = await Sandbox.delete("Sha/todos" + id)
+            let res = await sandbox.delete("Sha/todos/" + id)
             ProxyState.todo = ProxyState.todo.filter(t => t.id != id)
         } catch (error) {
-
+            console.error(error)
         }
     }
 }
