@@ -5,7 +5,6 @@ import { sandbox } from "./AxiosService.js";
 class QuotesService {
 
     async getQuote() {
-        debugger;
         try {
             const res = await sandbox.get('quotes/')
             console.log(res.data)

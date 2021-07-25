@@ -5,7 +5,6 @@ import { sandbox } from "./AxiosService.js";
 class WeatherService {
 
     async getWeather() {
-        debugger;
         try {
             const res = await sandbox.get('weather/')
             console.log(res.data)

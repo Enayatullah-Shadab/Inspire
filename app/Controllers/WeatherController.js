@@ -8,8 +8,6 @@ function _drawWeather() {
     weather.forEach(w => template += w.Template)
     // document.getElementById('weather').innerText = template
 }
-
-
 export default class WeatherController {
 
     constructor() {
