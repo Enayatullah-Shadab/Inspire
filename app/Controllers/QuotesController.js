@@ -3,6 +3,7 @@ import { quotesService } from "../Services/QuotesService.js"
 
 
 function _drawQuote() {
+
     const quote = ProxyState.quote
     let template = ''
     quote.forEach(q => template += q.Template)
@@ -10,12 +11,12 @@ function _drawQuote() {
 }
 export default class QuotesController {
 
-
     constructor() {
         ProxyState.on('quote', _drawQuote())
         this.getQuote()
     }
     async getQuote() {
+
         try {
             await quotesService.getQuote()
         } catch (error) {

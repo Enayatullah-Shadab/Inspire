@@ -8,7 +8,7 @@ class App {
   todosController = new TodosController()
   imagesController = new ImagesController()
   quotesController = new QuotesController()
-  weatherContller = new WeatherController()
+  weatherController = new WeatherController()
   // clocksController = new ClocksController()
 }
 

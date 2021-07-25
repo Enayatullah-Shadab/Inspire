@@ -6,9 +6,9 @@ class WeatherService {
 
     async getWeather() {
         try {
-            const res = await sandbox.get('Sha/todos')
+            const res = await sandbox.get('weather/')
             console.log(res.data)
-            ProxyState.Weather = res.data.map(w => new Weather(w))
+            // ProxyState.Weather = res.data.map(w => new Weather(w))
             console.log('call from weather service')
         } catch (error) {
             console.error('error form weather service ' + error);
