@@ -43,7 +43,6 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
-            debugger;
             let v = document.getElementById(id).checked
             // if (document.getElementById(id).checked) {
 
