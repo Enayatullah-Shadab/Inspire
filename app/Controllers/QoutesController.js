@@ -2,7 +2,14 @@ import { ProxyState } from "../AppState.js"
 import { qoutesService } from "../Services/QoutesService.js"
 
 
+function _drawQuoute() {
+    const quote = ProxyState.qoute
+    let template = ''
+    qoute.array.forEach(q => template += q.template)
+    document.getElementById('quote').innerHTML = template
+}
 export default class QoutesController {
+
 
     constructor() {
         ProxyState.on('quote', _drawQuoute())
