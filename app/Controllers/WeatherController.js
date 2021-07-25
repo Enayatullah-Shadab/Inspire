@@ -6,7 +6,7 @@ function _drawWeather() {
     const weather = ProxyState.weather
     let template = ''
     weather.forEach(w => template += w.Template)
-    document.getElementById('weather').innerText = template
+    // document.getElementById('weather').innerText = template
 }
 
 
