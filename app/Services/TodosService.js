@@ -28,6 +28,7 @@ class TodosService {
     async updateTodo(id, v) {
 
         try {
+            debugger;
             let item = ProxyState.todo.find(t => t.id == id)
             item.completed = !item.completed
             console.log(item.completed)
