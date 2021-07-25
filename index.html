@@ -48,7 +48,7 @@
             <span><i class="mdi mdi-15px mdi-trash-can" onclick="app.todosController.deleteTodos()"></i></span>
         </div> -->
 
-        <div class="card border-success m-5 p-1 card border-black w-50" style="max-width: 18rem;">
+        <div class="myCard card border-success m-5 p-1 card border-black w-50" style="max-width: 18rem;">
             <div class="card-header bg-transparent border-success ">Todos</div>
             <div class="card-body text-success ">
                 <!-- <label class="form-check-label ">
@@ -61,7 +61,7 @@
 
                 <div id="clock"></div>
                 <div id="image"></div>
-                <div id="weather"></div>
+
 
             </div>
             <form class="d-flex flex-row" onsubmit="app.todosController.newTodo('${thsi.id}')">
@@ -75,6 +75,7 @@
             <div id="content"></div>
             <div id="autor"></div>
         </div>
+        <div id="weather"></div>
     </main>
     <footer class=" bg-dark text-light">
         <div class="text-center">
