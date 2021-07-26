@@ -9,7 +9,7 @@ export default class Weather {
         return `
     <div class="">
         ${this.name}
-        ${this.temp}
+        ${this.temp}+f
         ${this.humidity}
     </div> `
     }

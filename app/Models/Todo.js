@@ -15,7 +15,7 @@ export default class Todo {
                 <span><i class="mdi mdi-15px mdi-trash-can" class="text-right" onclick="app.todosController.deleteTodo('${this.id}')"></i></span>
          </div>`
     }
-    // onclick="app.todosController.updateTodo('${this.id}')"    <div class="card-body m=1"> 
+
 
 }
 

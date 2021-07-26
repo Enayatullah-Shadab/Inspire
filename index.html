@@ -16,12 +16,12 @@
     <title>Inspire</title>
     <style>
         #clock {
-            font-size: 50px;
-            width: 400px;
-            margin: 60px;
-            border: 1px solid rgb(101, 13, 241);
-            border-radius: 5px;
-
+            font-size: 30px;
+            width: 200px;
+            margin: 3px;
+            border: 5px solid rgb(22, 7, 231);
+            color: #f10606;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -35,7 +35,7 @@
             </a>
         </nav>
     </header> -->
-    <main class="container">
+    <main class="container-fluid">
         <!-- <form class="m-3" onsubmit="app.todosController.newTodo(event)">
             <div class="d-flex flex-row">
                 <div class="form-group col "></div>
@@ -57,8 +57,8 @@
 
             <span><i class="mdi mdi-15px mdi-trash-can" onclick="app.todosController.deleteTodos()"></i></span>
         </div> -->
-        <div class="card-group">
-            <div class="myCard card border-success m-2 p-1 card border-black w-50" style="max-width: 18rem;">
+        <div class="card-group myCard">
+            <div class=" card border-success m-2 p-1 card border-black w-25">
                 <div class="card-header bg-transparent border-success ">Todos
                     <p class="tcount" id="tcount">0/0</p>
                 </div>
@@ -68,26 +68,20 @@
                     <input type="checkbox" class="form-check-input " name="todos-name" id="todos-name"
                         value="checkedValue" onclick="app.todosController.updateTodo('${this.id}')" checked>
                 </label> -->
-
                         <!-- <p id="todos-name"></p> -->
                     </div>
                 </div>
                 <div class="card-footer">
                     <form class="d-flex flex-row" onsubmit="app.todosController.newTodo('${thsi.id}')">
-                        <input type="text" name="description" placeholder="Add todos"
-                            class="card-footer bg-transparent border-success">
+                        <input type="text" name="description" size="15px" placeholder="Add todos" class="card-footer">
                         <button type="submit" class="bg-primary top-round "> Add
                         </button>
                     </form>
                 </div>
             </div>
         </div>
-        <!--      <div class="myQoute">
-            <div id="qcontent"></div> -->
-
-        <div class="qcontent">
+        <div class="qcontent myQuotes">
             <p class="qcontent" id="qcontent"></p>
-
             <div class="autor">
                 <p class="autor" id="autor" ${exists ? 'disabled' : '' }></p>
             </div>
@@ -101,11 +95,11 @@
         <div class="clock" id="clock">8:10:45</div>
 
     </main>
-    <!-- <footer class=" bg-dark text-light">
+    <footer class=" bg-dark text-light">
         <div class="text-center">
             <p><small>Made with 💪 by Shadab</small></p>
         </div>
-    </footer> -->
+    </footer>
 
     <script>
         setInterval(showTime, 1000);
