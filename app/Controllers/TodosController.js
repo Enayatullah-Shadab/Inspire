@@ -11,7 +11,12 @@ function _drawAll() {
     if (!template) {
         document.getElementById('todos-name').innerHTML = `<h4> <h4> Please enter a text to display it</h4>`
     }
+    debugger;
+    todosService.countTodos();
+
 }
+
+
 export default class TodosController {
     constructor() {
         ProxyState.on('todo', _drawAll)
@@ -43,19 +48,18 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
-            debugger
+            debugger;
             let v = document.getElementById(id).checked
-            // if (document.getElementById(id).checked) {
 
-            //     alert("Checked")
-            // } else {
-            //     alert("Not Checked")
-            // }
-            console.log('this is hi from update')
             await todosService.updateTodo(id, v)
         } catch (error) {
             console.error(error);
         }
+    }
+    handletodochange(event) {
+        const { checked } = event.target;
+        todosService.updateTodo(event.target.id, checked)
+
     }
 
     async deleteTodo(id) {
@@ -68,6 +72,9 @@ export default class TodosController {
             console.error(error)
         }
     }
+
+
+
 
     //     checked(id) {
     //         try {
