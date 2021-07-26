@@ -10704,6 +10704,16 @@ main {
   background-color: light;
   width: 200px;
 }
+.container {
+  position: relative;
+  text-align: center;
+}
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .myCard{
   position: absolute;
   bottom:0;
@@ -10711,3 +10721,13 @@ main {
   width: 200px;
   height:400px;
 }
+.content:hover .autor {
+      opacity : 1;
+
+  }
+   .content .autor {
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+
+
