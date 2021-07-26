@@ -16,11 +16,11 @@
     <title>Inspire</title>
     <style>
         #clock {
-            font-size: 80px;
-            width: 450px;
-            margin: 80px;
-            border: 2px solid rgb(101, 13, 241);
-            border-radius: 10px;
+            font-size: 50px;
+            width: 400px;
+            margin: 60px;
+            border: 1px solid rgb(101, 13, 241);
+            border-radius: 5px;
 
         }
     </style>
@@ -62,7 +62,7 @@
                 <div class="card-header bg-transparent border-success ">Todos
                     <p class="tcount" id="tcount">0/0</p>
                 </div>
-                <div class="card" id="todos-name">
+                <div class="card" id="todos-name" id="totalTodos">
                     <div class="card-body text-success ">
                         <!-- <label class="form-check-label ">
                     <input type="checkbox" class="form-check-input " name="todos-name" id="todos-name"
@@ -82,9 +82,11 @@
                 </div>
             </div>
         </div>
+        <!--      <div class="myQoute">
+            <div id="qcontent"></div> -->
 
-        <div class="myQoute">
-            <div id="content"></div>
+        <div class="qcontent">
+            <p class="qcontent" id="qcontent"></p>
 
             <div class="autor">
                 <p class="autor" id="autor" ${exists ? 'disabled' : '' }></p>

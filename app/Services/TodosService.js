@@ -4,6 +4,9 @@ import Todo from "../Models/Todo.js";
 
 class TodosService {
 
+    constructor() {
+
+    }
     async getTodo() {
         try {
             const res = await sandbox.get('Sha/todos')
@@ -13,6 +16,7 @@ class TodosService {
             console.error()
         }
     }
+
 
     async newTodo(rawTodo) {
 
@@ -25,16 +29,20 @@ class TodosService {
         }
     }
 
-    async updateTodo(id, v) {
+    async updateTodo(id, checked) {
 
         try {
-            debugger;
-            let item = ProxyState.todo.find(t => t.id == id)
-            item.completed = !item.completed
-            console.log(item.completed)
-            console.log(item);
-            let res = await sandbox.put("Sha/todos/" + id, { completed: v })
+            let res = await sandbox.put("Sha/todos/" + id, { completed: checked })
             console.log(res.data);
+
+            let item = ProxyState.todo.find(t => t.id == id)
+            if (item.completed === checked) {
+                item.completed = false;
+            }
+            else {
+                item.completed = checked;
+            }
+
             ProxyState.todo = ProxyState.todo
         } catch (error) {
             console.log(error)
@@ -48,5 +56,27 @@ class TodosService {
             console.error(error)
         }
     }
+
+
+    countTodos() {
+        let totalTodos = ProxyState.todo.filter(t => t.id)
+        if (totalTodos.length == undefined) {
+            totalTodos = 0
+        } else {
+            totalTodos = totalTodos.length
+        }
+        let checkCount = ProxyState.todo.filter(t => t.completed == true)
+        if (checkCount.length == undefined) {
+            checkCount = 0
+        } else {
+            checkCount = checkCount.length
+        }
+        if (totalTodos != 0) {
+            document.getElementById('tcount').innerHTML = checkCount + '/' + totalTodos
+        } else {
+            document.getElementById('tcount').innerHTML = ''
+        }
+    }
+
 }
 export const todosService = new TodosService();

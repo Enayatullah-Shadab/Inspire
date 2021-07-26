@@ -11,7 +11,6 @@ function _drawAll() {
     if (!template) {
         document.getElementById('todos-name').innerHTML = `<h4> <h4> Please enter a text to display it</h4>`
     }
-    debugger;
     todosService.countTodos();
 
 }
@@ -48,7 +47,6 @@ export default class TodosController {
     }
     async updateTodo(id) {
         try {
-            debugger;
             let v = document.getElementById(id).checked
 
             await todosService.updateTodo(id, v)
